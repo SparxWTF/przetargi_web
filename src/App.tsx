@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import './App.css'
 import RadarBackground from './components/RadarBackground'
+import ProcessFlow from './components/ProcessFlow'
 import {
   Search,
   Radar,
@@ -18,8 +19,6 @@ import {
   Cpu,
   Database,
   ChevronDown,
-  Shield,
-  BellRing,
   Menu,
   X,
 } from 'lucide-react'
@@ -534,7 +533,7 @@ function App() {
 
       {/* ═══ HOW IT WORKS ═══ */}
       <section id="jak-dziala" className="relative z-10 px-4 pb-24 scroll-mt-20">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 40 }}
@@ -550,57 +549,11 @@ function App() {
               <span className="text-white"> ?</span>
             </h2>
             <p className="text-slate-400 text-sm md:text-base max-w-xl mx-auto">
-              Trzy kroki od rejestracji do idealnie dopasowanych przetargów
+              Od surowych danych do gotowych dopasowań — cały proces w jednym systemie
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                num: '01',
-                icon: Shield,
-                title: 'REJESTRACJA',
-                desc: 'Utwórz konto i dodaj swoje produkty — system zbuduje Twój profil dopasowań',
-                color: '#39FF14',
-              },
-              {
-                num: '02',
-                icon: Radar,
-                title: 'SKANOWANIE',
-                desc: 'Radar automatycznie analizuje tysiące przetargów i szuka dopasowań do Twojej oferty',
-                color: '#39FF14',
-              },
-              {
-                num: '03',
-                icon: BellRing,
-                title: 'POWIADOMIENIA',
-                desc: 'Otrzymujesz alert z najlepszymi przetargami — ranking, scoring, pełna analiza',
-                color: '#39FF14',
-              },
-            ].map((step, i) => (
-              <motion.div
-                key={step.num}
-                className="cyber-border rounded-xl p-6 text-center"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-              >
-                <div
-                  className="font-mono text-4xl font-black mb-4"
-                  style={{ color: step.color, textShadow: `0 0 20px ${step.color}40` }}
-                >
-                  {step.num}
-                </div>
-                <step.icon
-                  className="w-8 h-8 mx-auto mb-4"
-                  style={{ color: step.color, filter: `drop-shadow(0 0 8px ${step.color}80)` }}
-                />
-                <h3 className="text-white font-bold text-lg mb-3 tracking-wider">{step.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          <ProcessFlow />
         </div>
       </section>
 
