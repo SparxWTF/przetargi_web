@@ -160,74 +160,56 @@ function App() {
         style={{ background: 'rgba(2,2,4,0.92)', backdropFilter: 'blur(20px)' }}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-0">
-          {/* Logo: wave signal → AI chip */}
-          <a href="/" className="flex items-center gap-2 py-3 group">
-            <svg className="w-28 h-8" viewBox="0 0 120 32" fill="none">
-              {/* Wave signal flowing right */}
-              <path
-                d="M2,16 C6,16 8,4 12,4 C16,4 18,28 22,28 C26,28 28,4 32,4 C36,4 38,28 42,28 C46,28 48,8 52,16"
+          {/* Logo: radar icon + name */}
+          <a href="/" className="flex items-center gap-2.5 py-3 group">
+            <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
+              {/* Rings */}
+              <circle cx="16" cy="16" r="13" stroke="#39FF14" strokeWidth="1" opacity="0.25" />
+              <circle cx="16" cy="16" r="9" stroke="#39FF14" strokeWidth="0.8" opacity="0.2" />
+              <circle cx="16" cy="16" r="5" stroke="#39FF14" strokeWidth="0.6" opacity="0.15" />
+              {/* Crosshairs */}
+              <line x1="16" y1="2" x2="16" y2="30" stroke="#39FF14" strokeWidth="0.4" opacity="0.12" />
+              <line x1="2" y1="16" x2="30" y2="16" stroke="#39FF14" strokeWidth="0.4" opacity="0.12" />
+              {/* Sweep */}
+              <line
+                x1="16"
+                y1="16"
+                x2="27"
+                y2="7"
                 stroke="#39FF14"
                 strokeWidth="1.5"
-                fill="none"
                 strokeLinecap="round"
-                strokeDasharray="100"
-                strokeDashoffset="0"
-                style={{
-                  animation: 'ekg-flow 2.5s linear infinite',
-                  filter: 'drop-shadow(0 0 4px rgba(57,255,20,0.6))',
-                }}
-              />
-              {/* Arrow connector */}
-              <line x1="54" y1="16" x2="64" y2="16" stroke="#39FF14" strokeWidth="1" opacity="0.4" />
-              <polygon points="62,13 68,16 62,19" fill="#39FF14" opacity="0.5" />
-              {/* AI Chip body */}
-              <rect
-                x="70"
-                y="6"
-                width="20"
-                height="20"
-                rx="3"
-                fill="none"
-                stroke="#39FF14"
-                strokeWidth="1.2"
                 opacity="0.7"
-              />
-              {/* Chip pins */}
-              <line x1="74" y1="3" x2="74" y2="6" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="80" y1="3" x2="80" y2="6" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="86" y1="3" x2="86" y2="6" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="74" y1="26" x2="74" y2="29" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="80" y1="26" x2="80" y2="29" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="86" y1="26" x2="86" y2="29" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="67" y1="11" x2="70" y2="11" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="67" y1="16" x2="70" y2="16" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="67" y1="21" x2="70" y2="21" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="90" y1="11" x2="93" y2="11" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="90" y1="16" x2="93" y2="16" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              <line x1="90" y1="21" x2="93" y2="21" stroke="#39FF14" strokeWidth="0.8" opacity="0.4" />
-              {/* Radar symbol inside chip */}
-              <circle cx="80" cy="16" r="4" fill="none" stroke="#39FF14" strokeWidth="0.8" opacity="0.6" />
-              <circle cx="80" cy="16" r="2" fill="#39FF14" opacity="0.5" />
-              {/* Chip pulse glow */}
-              <rect
-                x="70"
-                y="6"
-                width="20"
-                height="20"
-                rx="3"
-                fill="none"
-                stroke="#39FF14"
-                strokeWidth="0.5"
-                opacity="0.3"
               >
-                <animate attributeName="opacity" values="0.1;0.5;0.1" dur="2s" repeatCount="indefinite" />
-              </rect>
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 16 16"
+                  to="360 16 16"
+                  dur="4s"
+                  repeatCount="indefinite"
+                />
+              </line>
+              <path d="M16,16 L27,7 A13,13 0 0,0 16,3 Z" fill="#39FF14" opacity="0.06">
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 16 16"
+                  to="360 16 16"
+                  dur="4s"
+                  repeatCount="indefinite"
+                />
+              </path>
+              {/* Center */}
+              <circle cx="16" cy="16" r="1.5" fill="#39FF14" opacity="0.6" />
+              {/* Blip */}
+              <circle cx="22" cy="10" r="1" fill="#39FF14" opacity="0.5">
+                <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2s" repeatCount="indefinite" />
+              </circle>
             </svg>
-            <div className="flex flex-col leading-tight ml-1">
-              <span className="text-base font-black tracking-tight glitch-text" data-text="PRZETARGI RADAR">
-                PRZETARGI RADAR
-              </span>
-            </div>
+            <span className="text-base font-black tracking-tight glitch-text" data-text="PRZETARGI RADAR">
+              PRZETARGI RADAR
+            </span>
           </a>
 
           {/* Desktop Nav */}
@@ -330,12 +312,6 @@ function App() {
               RADAR
             </span>
           </h1>
-          <div
-            className="font-mono text-lg md:text-2xl font-bold tracking-[0.15em] mt-3"
-            style={{ color: '#39FF14', textShadow: '0 0 15px rgba(57,255,20,0.4)' }}
-          >
-            INTELIGENTNY SYSTEM RADAROWY
-          </div>
         </motion.div>
 
         <motion.p
@@ -746,8 +722,13 @@ function App() {
             <Radar className="w-4 h-4" style={{ color: '#39FF14' }} />
             <span className="text-xs font-mono text-slate-500">PRZETARGI RADAR &copy; {new Date().getFullYear()}</span>
           </div>
-          <div className="text-xs font-mono text-slate-600">
-            INTELIGENTNY SYSTEM RADAROWY — WSZYSTKIE MODUŁY AKTYWNE
+          <div className="text-xs text-slate-600">
+            <span className="font-mono">INTELIGENTNY SYSTEM RADAROWY</span>
+            <span className="mx-2">—</span>
+            <span className="italic">Bo życie jest za krótkie, żeby czytać BZP samemu</span>
+          </div>
+          <div className="text-[10px] text-slate-700">
+            with <span style={{ color: '#39FF14' }}>♥</span> from Sparx
           </div>
         </div>
       </footer>
