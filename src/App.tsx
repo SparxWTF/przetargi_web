@@ -219,7 +219,10 @@ function App() {
                 {item.label}
               </a>
             ))}
-            <a href="/accounts/login/" className="neon-button ml-4 text-xs !py-2 !px-4 flex items-center gap-1.5">
+            <a
+              href="https://demo.przetargi-radar.pl"
+              className="neon-button ml-4 text-xs !py-2 !px-4 flex items-center gap-1.5"
+            >
               <LogIn className="w-3.5 h-3.5" /> ZALOGUJ
             </a>
           </div>
@@ -249,7 +252,7 @@ function App() {
                 {item.label}
               </a>
             ))}
-            <a href="/accounts/login/" className="neon-button mt-2 text-center text-sm !py-2.5">
+            <a href="https://demo.przetargi-radar.pl" className="neon-button mt-2 text-center text-sm !py-2.5">
               <LogIn className="w-4 h-4 inline mr-2" /> ZALOGUJ SIĘ
             </a>
           </motion.div>
@@ -358,7 +361,7 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <a href="/accounts/login/" className="neon-button flex items-center justify-center gap-2 text-sm !py-3 !px-8">
+          <a href="#kontakt" className="neon-button flex items-center justify-center gap-2 text-sm !py-3 !px-8">
             <Radar className="w-4 h-4" /> URUCHOM RADAR
           </a>
           <a
@@ -652,16 +655,10 @@ function App() {
             </p>
             <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/accounts/login/"
+                href="mailto:krzysztof@sparx.wtf"
                 className="neon-button flex items-center justify-center gap-2 text-sm !py-3 !px-8 cursor-pointer"
               >
-                <LogIn className="w-4 h-4" /> ZALOGUJ SIĘ
-              </a>
-              <a
-                href="mailto:krzysztof@sparx.wtf"
-                className="flex items-center justify-center gap-2 text-sm py-3 px-8 rounded-lg border border-slate-700 text-slate-400 hover:border-neon-green/30 hover:text-neon-green transition-all cursor-pointer"
-              >
-                <Mail className="w-4 h-4" /> KONTAKT
+                <Mail className="w-4 h-4" /> NAPISZ DO NAS
               </a>
             </div>
           </div>
