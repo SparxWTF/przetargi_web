@@ -658,7 +658,7 @@ function App() {
                 <LogIn className="w-4 h-4" /> ZALOGUJ SIĘ
               </a>
               <a
-                href="mailto:kontakt@przetargiradar.pl"
+                href="mailto:krzysztof@sparx.wtf"
                 className="flex items-center justify-center gap-2 text-sm py-3 px-8 rounded-lg border border-slate-700 text-slate-400 hover:border-neon-green/30 hover:text-neon-green transition-all"
               >
                 <Mail className="w-4 h-4" /> KONTAKT

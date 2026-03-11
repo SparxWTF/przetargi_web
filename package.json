@@ -16,7 +16,7 @@
     "prepare": "husky"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
