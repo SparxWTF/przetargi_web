@@ -314,6 +314,7 @@ html {
   z-index: -1;
   opacity: 0.2;
   animation: cyber-grid 3s linear infinite;
+  pointer-events: none;
 }
 
 .cyber-grid-bg {
@@ -511,6 +512,7 @@ html {
   width: 20px;
   height: 20px;
   border-color: #39ff14;
+  pointer-events: none;
 }
 .corner-accents::before {
   top: -1px;

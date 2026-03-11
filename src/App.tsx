@@ -650,16 +650,16 @@ function App() {
             <p className="text-slate-400 mb-8 max-w-lg mx-auto">
               Dołącz do systemu i zacznij skanować rynek przetargów dopasowanych do Twojej oferty
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/accounts/login/"
-                className="neon-button flex items-center justify-center gap-2 text-sm !py-3 !px-8"
+                className="neon-button flex items-center justify-center gap-2 text-sm !py-3 !px-8 cursor-pointer"
               >
                 <LogIn className="w-4 h-4" /> ZALOGUJ SIĘ
               </a>
               <a
                 href="mailto:krzysztof@sparx.wtf"
-                className="flex items-center justify-center gap-2 text-sm py-3 px-8 rounded-lg border border-slate-700 text-slate-400 hover:border-neon-green/30 hover:text-neon-green transition-all"
+                className="flex items-center justify-center gap-2 text-sm py-3 px-8 rounded-lg border border-slate-700 text-slate-400 hover:border-neon-green/30 hover:text-neon-green transition-all cursor-pointer"
               >
                 <Mail className="w-4 h-4" /> KONTAKT
               </a>
